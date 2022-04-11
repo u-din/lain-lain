@@ -1,0 +1,5 @@
+<script type="text/javascript"> 
+if (window.location.protocol !== 'http:') {
+    window.location = 'http://' + window.location.hostname + window.location.pathname + window.location.hash;
+}
+</script>
