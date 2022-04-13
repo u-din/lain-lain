@@ -1,0 +1,29 @@
+<!-- Shaka Script -->
+    <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/level-selector@0.2.0/dist/level-selector.min.js" type="text/javascript"></script>
+
+<div id="player"></div>
+    <script>
+        var player = new Clappr.Player({
+            source: 'https://acdn.zhengyaning.com/xoilac/channel-3.m3u8?auth_key=1645859224-0-0-0dfcca14c00221f49af88e8df85a8f26',
+            autoPlay: true,
+            height: '450',
+            width: '100%',
+            plugins: [DashShakaPlayback, LevelSelector],
+            poster: '',
+            watermark: 'https://raw.githubusercontent.com/shabrina0401/pict/main/Logo.png',
+            position: 'bottom-right',
+            shakaConfiguration: {
+                drm: {
+                    servers: {
+                        'com.widevine.alpha': ''
+                    }
+                }
+            },
+            shakaOnBeforeLoad: function(shaka_player) {
+                // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+            },
+            parentId: '#player'
+        });
+    </script>
